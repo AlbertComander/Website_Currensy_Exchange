@@ -1,0 +1,88 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header, nav, section, footer, aside {
+    margin: 10px;
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Это слой сетки(Grid) для больших экранов */
+@media (min-width: 768px) {
+    .main-content {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    nav {
+        max-width: 200px;
+    }
+
+    section {
+        flex: 2;
+    }
+
+    aside {
+        flex: 1;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

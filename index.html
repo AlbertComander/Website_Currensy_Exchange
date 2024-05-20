@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обмен Валют</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/section.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/aside.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Обмен Валют">
+    <meta property="og:description" content="Получите актуальные курсы обмена валют и новости.">
+    <meta property="og:image" content="Наш_Логотип.jpg">
+    <meta property="og:url" content="https://example.com">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="Наш_Логотип.png" alt="Логотип с символами различных валют" class="logo">
+                <h1 class="oswald-font">Курсы Обмена Валют</h1>
+            </div>
+        </header>
+        <div class="main-content">
+            <nav>
+                <ul>
+                    <li><a href="#rates">Курсы</a>
+                        <ul>
+                            <li><a href="#usd">Курсы USD</a></li>
+                            <li><a href="#eur">Курсы EUR</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#converter">Конвертер</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#map">Карта</a></li>
+                </ul>
+            </nav>
+            <section id="home">
+                <header class="centered">
+                    <h2>Последние Обновления</h2>
+                </header>
+                <article id="rates">
+                    <h3>Информация о Курсе Обмена (в рублях)</h3>
+                    <table id="exchange-rates-table">
+                        <thead>
+                            <tr>
+                                <th>Валюта</th>
+                                <th>Курс</th>
+                            </tr>
+                        </thead>
+                        <tbody id="exchange-rates"></tbody>
+                    </table>
+                </article>
+                <article id="converter">
+                    <h3>Конвертер Валют</h3>
+                    <form id="converter-form">
+                        <label for="amount">Сумма:</label>
+                        <input type="number" id="amount" name="amount" aria-label="Сумма" required>
+                        <label for="from-currency">Из:</label>
+                        <select id="from-currency" name="from-currency" aria-label="Из валюты">
+                            <option value="RUB">RUB</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="SEK">SEK</option>
+                            <option value="NZD">NZD</option>
+                        </select>
+                        <label for="to-currency">В:</label>
+                        <select id="to-currency" name="to-currency" aria-label="В валюту">
+                            <option value="RUB">RUB</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="SEK">SEK</option>
+                            <option value="NZD">NZD</option>
+                        </select>
+                        <button type="submit">Конвертировать</button>
+                        <div id="conversion-result"></div>
+                    </form>
+                </article>
+                <footer id="contact">
+                    <p>Свяжитесь с нами: info@example.com</p>
+                    <form id="contact-form">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" aria-label="Имя" required>
+                        <label for="email">Эл. почта:</label>
+                        <input type="email" id="email" name="email" aria-label="Эл. почта" required>
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" aria-label="Сообщение" required></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                </footer>
+            </section>
+            <aside>
+                <h3>Новости Валют</h3>
+                <iframe src="https://quote.rbc.ru/short_news/" width="100%" height="400" style="border:none;"></iframe>
+            </aside>
+        </div>
+        <footer>
+            <p>&copy; <span id="current-year"></span> Обмен Валют. Все права защищены.</p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/getData.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                center: [55.79889, 49.10611],
+                zoom: 12
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+        });
+    </script>
+</body>
+
+
+</html>

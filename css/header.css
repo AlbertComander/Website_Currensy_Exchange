@@ -1,0 +1,23 @@
+header {
+    background-color: #1E1E1E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .oswald-font {
+    font-family: 'Oswald', sans-serif;
+}
